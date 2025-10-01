@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="24" height="17" tilewidth="24" tileheight="24" infinite="0" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" name="1637" tilewidth="24" tileheight="24" tilecount="72" columns="18">
+  <image source="1637.png" width="433" height="97"/>
+ </tileset>
+ <tileset firstgid="73" name="tile6" tilewidth="24" tileheight="24" tilecount="1" columns="1">
+  <image source="tile6.png" width="24" height="24"/>
+ </tileset>
+ <tileset firstgid="74" name="tile10" tilewidth="24" tileheight="24" tilecount="1" columns="1">
+  <image source="tile10.png" width="24" height="24"/>
+ </tileset>
+ <tileset firstgid="75" name="tile5" tilewidth="24" tileheight="24" tilecount="1" columns="1">
+  <image source="tile5.png" width="24" height="24"/>
+ </tileset>
+ <tileset firstgid="76" name="tile11" tilewidth="24" tileheight="24" tilecount="1" columns="1">
+  <image source="tile11.png" width="24" height="24"/>
+ </tileset>
+ <tileset firstgid="77" name="tile4" tilewidth="24" tileheight="24" tilecount="1" columns="1">
+  <image source="tile4.png" width="24" height="24"/>
+ </tileset>
+ <tileset firstgid="78" name="tile12" tilewidth="24" tileheight="24" tilecount="1" columns="1">
+  <image source="tile12.png" width="24" height="24"/>
+ </tileset>
+ <tileset firstgid="79" name="tile" tilewidth="24" tileheight="24" tilecount="34" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="flower0.png" width="24" height="24"/>
+  </tile>
+  <tile id="1" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="flower1.png" width="24" height="24"/>
+  </tile>
+  <tile id="2" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="flower2.png" width="24" height="24"/>
+  </tile>
+  <tile id="3" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="flower3.png" width="24" height="24"/>
+  </tile>
+  <tile id="4" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="flower4.png" width="24" height="24"/>
+  </tile>
+  <tile id="5" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="flower5.png" width="24" height="24"/>
+  </tile>
+  <tile id="6" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="flower6.png" width="24" height="24"/>
+  </tile>
+  <tile id="7" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="flower7.png" width="24" height="24"/>
+  </tile>
+  <tile id="8" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="flower8.png" width="24" height="24"/>
+  </tile>
+  <tile id="9" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="grass0.png" width="24" height="24"/>
+  </tile>
+  <tile id="10" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="grass1.png" width="24" height="24"/>
+  </tile>
+  <tile id="11" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="grass2.png" width="24" height="24"/>
+  </tile>
+  <tile id="12" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="grass3.png" width="24" height="24"/>
+  </tile>
+  <tile id="13" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="grass4.png" width="24" height="24"/>
+  </tile>
+  <tile id="14" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="grass5.png" width="24" height="24"/>
+  </tile>
+  <tile id="15" type="decor">
+   <properties>
+    <property name="solid" type="bool" value="false"/>
+   </properties>
+   <image source="grass6.png" width="24" height="24"/>
+  </tile>
+  <tile id="16" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile0.png" width="24" height="24"/>
+  </tile>
+  <tile id="17" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile1.png" width="24" height="24"/>
+  </tile>
+  <tile id="18" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile2.png" width="24" height="24"/>
+  </tile>
+  <tile id="19" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile3.png" width="24" height="24"/>
+  </tile>
+  <tile id="20" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile4.png" width="24" height="24"/>
+  </tile>
+  <tile id="21" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile5.png" width="24" height="24"/>
+  </tile>
+  <tile id="22" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile6.png" width="24" height="24"/>
+  </tile>
+  <tile id="23" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile7.png" width="24" height="24"/>
+  </tile>
+  <tile id="24" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile8.png" width="24" height="24"/>
+  </tile>
+  <tile id="25" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile9.png" width="24" height="24"/>
+  </tile>
+  <tile id="26" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile10.png" width="24" height="24"/>
+  </tile>
+  <tile id="27" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile11.png" width="24" height="24"/>
+  </tile>
+  <tile id="28" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile12.png" width="24" height="24"/>
+  </tile>
+  <tile id="29" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile13.png" width="24" height="24"/>
+  </tile>
+  <tile id="30" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile14.png" width="24" height="24"/>
+  </tile>
+  <tile id="31" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile15.png" width="24" height="24"/>
+  </tile>
+  <tile id="32" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile16.png" width="24" height="24"/>
+  </tile>
+  <tile id="33" type="groud">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+   <image source="tile17.png" width="24" height="24"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="图块层 1" width="24" height="17">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,99,
+105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,105,
+105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,105,
+105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,105,
+101,93,89,92,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,91,0,89,106,
+109,109,97,109,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,95,109,98,109,
+109,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,109,
+109,94,0,91,94,94,91,94,93,90,91,88,88,93,91,94,93,94,91,90,93,94,0,97,
+98,109,109,98,95,109,109,98,109,109,98,109,95,109,109,109,98,109,109,109,109,109,96,109,
+0,0,0,0,0,0,0,0,100,0,0,0,0,0,0,100,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,107,0,0,0,0,0,0,105,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,105,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,107,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+</map>
