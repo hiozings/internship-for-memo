@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,14 +7,19 @@ public class PlayerControl : MonoBehaviour
 {
     public PlayerInputControl inputControl;
     private Rigidbody2D rb;
+    private PhysicsCheck physicsCheck;
     public Vector2 inputDirection;
+    [Header("基本参数")]
     public float speed;
-    public float originScale;
+    private float originScale;
+    public float jumpForce;
     private void Awake()
     {
-        inputControl = new PlayerInputControl();
         rb = GetComponent<Rigidbody2D>();
+        physicsCheck = GetComponent<PhysicsCheck>();
+        inputControl = new PlayerInputControl();
         originScale = transform.localScale.x;
+        inputControl.Gameplay.Jump.started += Jump;
     }
 
     private void OnEnable()
@@ -45,5 +51,11 @@ public class PlayerControl : MonoBehaviour
         if(inputDirection.x < 0)
             faceDir = originScale;
         transform.localScale = new Vector3(faceDir, transform.localScale.y, transform.localScale.z);
+    }
+
+    private void Jump(InputAction.CallbackContext context)
+    {
+        if(physicsCheck.isGround)
+            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
 }
