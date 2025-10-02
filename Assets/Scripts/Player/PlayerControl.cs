@@ -9,24 +9,35 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
     private CapsuleCollider2D capsuleCollider;
+    private PlayerAnimation playerAnimation;
     public Vector2 inputDirection;
 
     [Header("基本参数")]
     public float speed;
     private float originScale;
     public float jumpForce;
-    public bool isHurt;
     public float hurtForce;
+
+    [Header("状态参数")]
+    public bool isHurt;
     public bool isDead;
+    public bool isAttack;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         physicsCheck = GetComponent<PhysicsCheck>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+        playerAnimation = GetComponent<PlayerAnimation>();
         inputControl = new PlayerInputControl();
+
         originScale = transform.localScale.x;
+
         inputControl.Gameplay.Jump.started += Jump;
+        inputControl.Gameplay.Attack.started += PlayerAttack;
     }
+
+    
 
     private void OnEnable()
     {
@@ -68,6 +79,13 @@ public class PlayerControl : MonoBehaviour
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
 
+    private void PlayerAttack(InputAction.CallbackContext context)
+    {
+        playerAnimation.PlayAttack();
+        isAttack = true;
+    }
+
+    #region UnityEvent
     public void GetHurt(Transform attacker)
     {
         isHurt = true;
@@ -88,4 +106,5 @@ public class PlayerControl : MonoBehaviour
         //Debug.Log(Vector2.up * hurtForce);
         capsuleCollider.enabled = false;
     }
+    #endregion
 }
