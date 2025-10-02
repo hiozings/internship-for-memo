@@ -8,15 +8,21 @@ public class PlayerControl : MonoBehaviour
     public PlayerInputControl inputControl;
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
+    private CapsuleCollider2D capsuleCollider;
     public Vector2 inputDirection;
+
     [Header("基本参数")]
     public float speed;
     private float originScale;
     public float jumpForce;
+    public bool isHurt;
+    public float hurtForce;
+    public bool isDead;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         physicsCheck = GetComponent<PhysicsCheck>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
         inputControl = new PlayerInputControl();
         originScale = transform.localScale.x;
         inputControl.Gameplay.Jump.started += Jump;
@@ -39,7 +45,10 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if (!isHurt && !isDead)
+        {
+            Move();
+        }
     }
 
     public void Move()
@@ -57,5 +66,26 @@ public class PlayerControl : MonoBehaviour
     {
         if(physicsCheck.isGround)
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    public void GetHurt(Transform attacker)
+    {
+        isHurt = true;
+        rb.velocity = Vector2.zero;
+        Vector2 dir = new Vector2(transform.position.x - attacker.position.x, 0).normalized;
+        //Debug.Log(hurtForce);
+        //Debug.Log(dir);
+        rb.AddForce(dir * hurtForce, ForceMode2D.Impulse);
+        //Debug.Log("Hurt");
+    }
+
+    public void PlayerDead()
+    {
+        
+        isDead =true;
+        inputControl.Gameplay.Disable();
+        rb.AddForce(Vector2.up * (hurtForce*3), ForceMode2D.Impulse);
+        //Debug.Log(Vector2.up * hurtForce);
+        capsuleCollider.enabled = false;
     }
 }
