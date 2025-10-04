@@ -7,9 +7,13 @@ public class Attack : MonoBehaviour
     public int damage;
     public float attackRange;
     public float attackRate;
-
+    public bool disenableAfterAttack;
     private void OnTriggerStay2D(Collider2D collision)
     {
         collision.GetComponent<Character>()?.TakeDamage(this);
+        if(disenableAfterAttack)
+        {
+            damage = 0;
+        }
     }
 }

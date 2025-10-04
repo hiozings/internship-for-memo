@@ -13,12 +13,13 @@ public class TrapPlatform : MonoBehaviour
     private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
     private Animator anim;
-    private Collider2D coll;
+    //private Collider2D coll;
 
     private bool isActive = true;
     private bool isDisappearing = false;
     private bool isGround;
     public bool isSmash;
+    private bool ignoreTrap;
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>(); 
@@ -34,16 +35,17 @@ public class TrapPlatform : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
-    {
-        isGround = coll?.GetComponent<PhysicsCheck>()?.isGround ?? false;
-    }
+    //private void Update()
+    //{
+    //    isGround = coll?.GetComponent<PhysicsCheck>()?.isGround ?? false;
+    //}
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Tirrger");
-        coll = collision;
-        if (isGround && isActive && !isDisappearing && !isSmash)
+        //Debug.Log("Tirrger");
+        isGround = collision?.GetComponent<PhysicsCheck>()?.isGround ?? false;
+        ignoreTrap = collision?.GetComponent<Enemy>()?.ignoreTrap ?? false;
+        if (isGround && isActive && !isDisappearing && !isSmash && !ignoreTrap)
         {
             StartCoroutine(Disappear());
         }
@@ -71,6 +73,5 @@ public class TrapPlatform : MonoBehaviour
         anim.SetBool("isSmash", isSmash);
         if (state)
             spriteRenderer.enabled = true;
-
     }
 }

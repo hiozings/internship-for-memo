@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Slime : Enemy
 {
-
     public override void Move()
     {
         base.Move();

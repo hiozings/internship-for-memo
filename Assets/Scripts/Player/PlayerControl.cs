@@ -10,6 +10,8 @@ public class PlayerControl : MonoBehaviour
     private PhysicsCheck physicsCheck;
     private CapsuleCollider2D capsuleCollider;
     private PlayerAnimation playerAnimation;
+    public GameObject arrowPrefab;
+    public Transform firePoint;
     public Vector2 inputDirection;
 
     [Header("基本参数")]
@@ -32,6 +34,7 @@ public class PlayerControl : MonoBehaviour
         inputControl = new PlayerInputControl();
 
         originScale = transform.localScale.x;
+        
 
         inputControl.Gameplay.Jump.started += Jump;
         inputControl.Gameplay.Attack.started += PlayerAttack;
@@ -83,6 +86,15 @@ public class PlayerControl : MonoBehaviour
     {
         playerAnimation.PlayAttack();
         isAttack = true;
+        //FireArrow();
+    }
+
+    private void FireArrow()
+    {
+        GameObject arrowObj = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
+        Arrow arrow = arrowObj.GetComponent<Arrow>();
+        Vector2 dir = transform.localScale.x > 0 ? Vector2.left : Vector2.right;
+        arrow.Launch(dir);
     }
 
     #region UnityEvent

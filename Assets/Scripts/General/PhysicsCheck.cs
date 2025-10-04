@@ -13,6 +13,7 @@ public class PhysicsCheck : MonoBehaviour
     public bool isGround;
     public bool touchLeftWall;
     public bool touchRightWall;
+
     private void Update()
     {
         Check();
