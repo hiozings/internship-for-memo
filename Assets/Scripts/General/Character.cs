@@ -7,8 +7,9 @@ public class Character : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public float invulnerableDuration;
-    private float invulnerableConunter;
+    public float invulnerableConunter;
     public bool invulnerable;
+    public bool isBuff;
 
     public UnityEvent<Transform> OnTakeDamage;
     public UnityEvent OnDie;
@@ -54,4 +55,6 @@ public class Character : MonoBehaviour
             invulnerableConunter = invulnerableDuration;
         }
     }
+
+
 }

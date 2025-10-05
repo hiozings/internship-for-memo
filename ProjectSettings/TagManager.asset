@@ -15,9 +15,9 @@ TagManager:
   - Player
   - Enemy
   - Arrow
-  - 
-  - 
-  - 
+  - AirWall
+  - Loot
+  - Ingore
   - 
   - 
   - 

@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     protected PhysicsCheck physicsCheck;
     protected CapsuleCollider2D capsuleCollider2D;
     protected BoxCollider2D boxCollider2D;
+    public GameObject[] lootPrefab;
 
     public float normalSpeed;
     public float currentSpeed;
@@ -80,12 +81,29 @@ public class Enemy : MonoBehaviour
 
     public virtual void EnemyDead()
     {
+        if(isDead) return;
         isDead = true;
         anim.SetBool("dead", true);
         capsuleCollider2D.enabled = false;
         boxCollider2D.enabled = false;
+        foreach(Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+        Attack attack = GetComponent<Attack>();
+        attack.damage = 0;
+        SpawnLoot();
         rb.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
         StartCoroutine(Destroy());
+    }
+
+    public virtual void SpawnLoot()
+    {
+        if (lootPrefab.Length > 0)
+        {
+            int index = UnityEngine.Random.Range(0, lootPrefab.Length);
+            Instantiate(lootPrefab[index], transform.position, Quaternion.identity);
+        }
     }
 
     protected IEnumerator Destroy()

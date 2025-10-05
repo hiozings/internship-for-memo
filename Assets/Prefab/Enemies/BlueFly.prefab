@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
-  invulnerableDuration: 0
+  invulnerableDuration: 2
   invulnerable: 0
   OnTakeDamage:
     m_PersistentCalls:
@@ -221,6 +221,7 @@ MonoBehaviour:
   damage: 1
   attackRange: 0
   attackRate: 0
+  disenableAfterAttack: 0
 --- !u!114 &9066560000881728164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d418b1c7768b8f41a3f15e1f8127fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lootPrefab:
+  - {fileID: 5686634128908052698, guid: 053077c56c84ec2408390c2cee5311d2, type: 3}
+  - {fileID: 726115306883301637, guid: 35e381b56d58e2b4faa70e82b230c21f, type: 3}
   normalSpeed: 100
   currentSpeed: 0
   faceDir: {x: 0, y: 0, z: 0}
