@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Enemies
+  m_EditorClassIdentifier: 
+  m_GroupName: Enemies
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 42c02ff6d8bd7d64da9d3fad79c666d9
+  m_SerializeEntries:
+  - m_GUID: 892018e4ae2769b43aee419620992c1d
+    m_Address: Assets/Prefab/Enemies/BlueFly.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da022c3c876b103499b4e4553fe6f9fc
+    m_Address: Assets/Prefab/Enemies/Slime.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f709606836c53b44e87289b59744ebdf
+    m_Address: Assets/Prefab/Enemies/Black.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 7a749a316a77ca04faaebd00dbe975cd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7d6bc79669a7f3a4d9321b13c69f477c, type: 2}
+    - {fileID: 11400000, guid: 950715d92af95e048bbce43e5f77b701, type: 2}

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+
 public class Loot : MonoBehaviour
 {
     public float buffDuration;
@@ -15,7 +17,11 @@ public class Loot : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    public PlayAudioEventSO PlayAudioEvent;
+    public AudioClip pickupFX;
+
     public UnityEvent<Transform> OnPickup;
+    public event System.Action<GameObject> OnRemoveBuff;
     private Coroutine blinkCoroutine;
 
     private void Awake()
@@ -35,6 +41,7 @@ public class Loot : MonoBehaviour
 
         if (timer >= lifeTime)
         {
+            OnRemoveBuff?.Invoke(gameObject);
             Destroy(gameObject);
         }
     }
@@ -80,7 +87,8 @@ public class Loot : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             OnPickup?.Invoke(collision.transform);
-            
+            OnRemoveBuff?.Invoke(gameObject);
+            PlayAudioEvent.RaiseEvent(pickupFX);
             Destroy(gameObject);
         }
     }

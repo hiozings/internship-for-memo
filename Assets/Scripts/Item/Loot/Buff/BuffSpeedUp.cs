@@ -9,11 +9,14 @@ public class BuffSpeedUp : Loot
     public void OnSpeedUp(Transform player)
     {
         Character character = player.GetComponent<Character>();
-        if(character.isBuff) return;
-        else character.isBuff = true;
+        
+        character.ResetBuff(BuffType.SpeedUp);
+        character.isBuff = true;
         PlayerControl playerControl = player.GetComponent<PlayerControl>();
         playerControl.currentSpeed = playerControl.currentSpeed * speedMultiplier;
-        playerControl.StartCoroutine(playerControl.ResetSpeed(playerControl, buffDuration));
+        playerControl.StartCoroutine(playerControl.ResetSpeed(playerControl, buffDuration, character));
+        //character.buffType = BuffType.Nobuff;
+        //character.OnBuffChange?.Invoke(character);
     }
 
     //public void StopSpeedUp(Transform player)

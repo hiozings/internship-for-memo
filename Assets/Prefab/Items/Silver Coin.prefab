@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2758114931527668077}
   - component: {fileID: 2808016215158539087}
   - component: {fileID: 3928980792938081617}
+  - component: {fileID: 7738378055358154825}
   m_Layer: 11
   m_Name: Silver Coin
   m_TagString: Untagged
@@ -229,8 +230,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbcd64cfd80b52e47bbcc13c57ee3411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffDuration: 0
   score: 50
   lifeTime: 10
   blinkStartTime: 3
   minBlinkInterval: 0.05
   maxBlinkInterval: 0.1
+  PlayAudioEvent: {fileID: 11400000, guid: 07d1c95298b71924ca76e24fee9849bb, type: 2}
+  pickupFX: {fileID: 8300000, guid: 59903a50f46e8b743bf47f8d5eaacf68, type: 3}
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7738378055358154825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726115306883301637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91676a959ab49fc4fbb45644e9e65ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  afterSceneLoadedEvent: {fileID: 11400000, guid: 67c99802e59d3b94d9027ebcb0f1dd6d, type: 2}
+  bounds: {fileID: 0}
+  isLimited: 1
+  leftBoundary: 0
+  rightBoundary: 0
+  topBoundary: 0
+  bottomBoundary: 0
+  Offset: 0

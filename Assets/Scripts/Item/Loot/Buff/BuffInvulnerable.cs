@@ -8,8 +8,9 @@ public class BuffInvulnerable : Loot
     public void OnAddInvulnerable(Transform player)
     {
         Character character = player.GetComponent<Character>();
-        if (character.isBuff) return;
-        else character.isBuff = true;
+       
+        character.ResetBuff(BuffType.Invul);
+        character.isBuff = true;
         character.invulnerable = true;
         character.invulnerableConunter = buffDuration;
     }

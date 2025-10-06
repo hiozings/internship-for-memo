@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6456529304195834352}
   - component: {fileID: 115780849573311613}
   - component: {fileID: -7965159404388913861}
+  - component: {fileID: 8936787041615017843}
   m_Layer: 9
   m_Name: Arrow
   m_TagString: Untagged
@@ -122,7 +123,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04747528, y: 0.0021875426}
+  m_Offset: {x: -0.002516508, y: 0.02216909}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +134,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9109308, y: 0.38008904}
+  m_Size: {x: 1.7810504, y: 0.30415875}
   m_EdgeRadius: 0
 --- !u!70 &5798668892361705724
 CapsuleCollider2D:
@@ -225,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb1423a372a2ce4183fe268ea9ba216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 10
+  normalSpeed: 15
   currentSpeed: 0
   lifeTime: 10
   gravity: 1
@@ -233,6 +234,8 @@ MonoBehaviour:
   blinkStartTime: 5
   minBlinkInterval: 0.05
   maxBlinkInterval: 0.1
+  PlayAudioEvent: {fileID: 11400000, guid: 07d1c95298b71924ca76e24fee9849bb, type: 2}
+  hitFX: {fileID: 8300000, guid: bf06b9af6d74d8944a5b9311ff099f1a, type: 3}
 --- !u!251 &-7965159404388913861
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -252,3 +255,23 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &8936787041615017843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506551236465450989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91676a959ab49fc4fbb45644e9e65ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  afterSceneLoadedEvent: {fileID: 11400000, guid: 67c99802e59d3b94d9027ebcb0f1dd6d, type: 2}
+  bounds: {fileID: 0}
+  isLimited: 1
+  leftBoundary: 0
+  rightBoundary: 0
+  topBoundary: 0
+  bottomBoundary: 0
+  Offset: 0

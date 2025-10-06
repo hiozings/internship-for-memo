@@ -85,9 +85,10 @@ GameObject:
   - component: {fileID: 2532856707199170413}
   - component: {fileID: 8553963216497765525}
   - component: {fileID: -4555998771376799921}
+  - component: {fileID: 8347382991125774617}
   m_Layer: 8
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,7 +221,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05611053, y: 0.4207739}
+  m_Offset: {x: -0.1055257, y: 0.14953941}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -231,7 +232,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96632665, y: 0.8415478}
+  m_Size: {x: 0.6390882, y: 0.29907882}
   m_EdgeRadius: 0
 --- !u!70 &4968448543624326714
 CapsuleCollider2D:
@@ -283,7 +284,19 @@ MonoBehaviour:
   maxHealth: 1
   currentHealth: 0
   invulnerableDuration: 2
+  invulnerableConunter: 0
   invulnerable: 0
+  isBuff: 0
+  PlayAudioEvent: {fileID: 11400000, guid: 07d1c95298b71924ca76e24fee9849bb, type: 2}
+  takeDamageFX: {fileID: 8300000, guid: 4da68b35fa74e934888d31ae18c32c18, type: 3}
+  dieFX: {fileID: 8300000, guid: 4da68b35fa74e934888d31ae18c32c18, type: 3}
+  buffType: 0
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBuffChange:
+    m_PersistentCalls:
+      m_Calls: []
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -381,9 +394,30 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  playerControl: {fileID: 0}
   isGround: 0
   touchLeftWall: 0
   touchRightWall: 0
+--- !u!114 &8347382991125774617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4898115010191782840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91676a959ab49fc4fbb45644e9e65ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  afterSceneLoadedEvent: {fileID: 11400000, guid: 67c99802e59d3b94d9027ebcb0f1dd6d, type: 2}
+  bounds: {fileID: 0}
+  isLimited: 1
+  leftBoundary: 0
+  rightBoundary: 0
+  topBoundary: 0
+  bottomBoundary: 0
+  Offset: 0
 --- !u!1 &6253455178170306554
 GameObject:
   m_ObjectHideFlags: 0

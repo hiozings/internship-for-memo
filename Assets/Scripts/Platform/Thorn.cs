@@ -11,7 +11,7 @@ public class Thorn : MonoBehaviour
         
         Attack attack = GetComponent<Attack>();
         bool isGround = collision.collider.GetComponent<PhysicsCheck>()?.isGround ?? false;
-        if(isGround)
+        if(isGround && collision.collider.CompareTag("Player"))
             collision.collider.GetComponent<Character>()?.TakeDamage(attack);
     }
 }

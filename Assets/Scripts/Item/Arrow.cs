@@ -23,6 +23,9 @@ public class Arrow : MonoBehaviour
     private CapsuleCollider2D capsuleCollider;
     private SpriteRenderer spriteRenderer;
 
+    public PlayAudioEventSO PlayAudioEvent;
+    public AudioClip hitFX;
+
     private Vector2 velo;
     private bool isLaunched;
     private bool touched;
@@ -124,6 +127,7 @@ public class Arrow : MonoBehaviour
         
         if (collision?.GetComponent<Tilemap>() != null || collision?.gameObject.layer == LayerMask.NameToLayer("AirWall"))
         {
+            PlayAudioEvent.RaiseEvent(hitFX);
             rb.bodyType = RigidbodyType2D.Static;
             BecomePlatform();
         }

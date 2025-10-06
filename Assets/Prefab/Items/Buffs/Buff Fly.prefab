@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1501189098727559473}
   - component: {fileID: -5857046936122594242}
   - component: {fileID: -1494949445474951242}
+  - component: {fileID: 6843310445406557322}
   m_Layer: 11
   m_Name: Buff Fly
   m_TagString: Untagged
@@ -207,12 +208,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ee084b880f00d45ba1953683697184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffDuration: 0
+  buffDuration: 10
   score: 0
   lifeTime: 15
   blinkStartTime: 7
   minBlinkInterval: 0.05
   maxBlinkInterval: 0.1
+  PlayAudioEvent: {fileID: 11400000, guid: 07d1c95298b71924ca76e24fee9849bb, type: 2}
+  pickupFX: {fileID: 8300000, guid: 65e020fcc47beca41be66a5f07907fdd, type: 3}
   OnPickup:
     m_PersistentCalls:
       m_Calls:
@@ -228,3 +231,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6843310445406557322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908980939729110876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91676a959ab49fc4fbb45644e9e65ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  afterSceneLoadedEvent: {fileID: 11400000, guid: 67c99802e59d3b94d9027ebcb0f1dd6d, type: 2}
+  bounds: {fileID: 0}
+  isLimited: 1
+  leftBoundary: 0
+  rightBoundary: 0
+  topBoundary: 0
+  bottomBoundary: 0
+  Offset: 0

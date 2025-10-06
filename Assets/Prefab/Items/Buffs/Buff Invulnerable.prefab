@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4140816957097077623}
   - component: {fileID: -747996610304459802}
   - component: {fileID: 2025280017318288947}
+  - component: {fileID: 1192194343723082473}
   m_Layer: 11
   m_Name: Buff Invulnerable
   m_TagString: Untagged
@@ -208,12 +209,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffDuration: 10
-  isBuff: 0
   score: 0
   lifeTime: 15
   blinkStartTime: 7
   minBlinkInterval: 0.05
   maxBlinkInterval: 0.1
+  PlayAudioEvent: {fileID: 11400000, guid: 07d1c95298b71924ca76e24fee9849bb, type: 2}
+  pickupFX: {fileID: 8300000, guid: 65e020fcc47beca41be66a5f07907fdd, type: 3}
   OnPickup:
     m_PersistentCalls:
       m_Calls:
@@ -229,3 +231,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1192194343723082473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7567146117752918945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91676a959ab49fc4fbb45644e9e65ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  afterSceneLoadedEvent: {fileID: 11400000, guid: 67c99802e59d3b94d9027ebcb0f1dd6d, type: 2}
+  bounds: {fileID: 0}
+  isLimited: 1
+  leftBoundary: 0
+  rightBoundary: 0
+  topBoundary: 0
+  bottomBoundary: 0
+  Offset: 0

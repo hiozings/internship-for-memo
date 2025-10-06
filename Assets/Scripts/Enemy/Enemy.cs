@@ -86,7 +86,9 @@ public class Enemy : MonoBehaviour
         anim.SetBool("dead", true);
         capsuleCollider2D.enabled = false;
         boxCollider2D.enabled = false;
-        foreach(Transform child in transform)
+        LimitedInBounds limitedInBounds = GetComponent<LimitedInBounds>();
+        limitedInBounds.isLimited = false;
+        foreach (Transform child in transform)
         {
             child.gameObject.SetActive(false);
         }

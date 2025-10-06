@@ -6,6 +6,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerControl : MonoBehaviour
 {
+    [Header("事件监听")]
+    public SceneLoadEventSO loadEvent;
+    public VoidEventSO afterSceneLoadedEvent;
+
     public PlayerInputControl inputControl;
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
@@ -50,11 +54,17 @@ public class PlayerControl : MonoBehaviour
     private void OnEnable()
     {
         inputControl.Enable();
+        loadEvent.LoadRequestScene += OnLoadEvent;
+        afterSceneLoadedEvent.OnEventRaised += OnAfterSceneLoadedEvent;
     }
+
+    
 
     private void OnDisable()
     {
         inputControl.Disable();
+        loadEvent.LoadRequestScene -= OnLoadEvent;
+        afterSceneLoadedEvent.OnEventRaised -= OnAfterSceneLoadedEvent;
     }
 
     private void Update()
@@ -70,7 +80,7 @@ public class PlayerControl : MonoBehaviour
             Move();
             if (canFly && !physicsCheck.isGround && InputSystem.GetDevice<Keyboard>().wKey.isPressed)
             {
-                UnityEngine.Debug.Log("Fly");
+                //UnityEngine.Debug.Log("Fly");
                 isFly = true;
                 Fly();
             }
@@ -79,6 +89,20 @@ public class PlayerControl : MonoBehaviour
                 isFly = false;
             }
         }
+    }
+
+    private void OnLoadEvent(GameSceneEventSO arg0, Vector3 arg1, bool arg2)
+    {
+        inputControl.Gameplay.Disable();
+        UnityEngine.Debug.Log("Load Event Received");
+        this.gameObject.SetActive(false);
+    }
+
+    private void OnAfterSceneLoadedEvent()
+    {
+       inputControl.Gameplay.Enable();
+        UnityEngine.Debug.Log("After Scene Loaded Event Received");
+        this.gameObject.SetActive(true);
     }
 
     public void Move()
@@ -139,10 +163,15 @@ public class PlayerControl : MonoBehaviour
         rb.AddForce(Vector2.up * (hurtForce*3), ForceMode2D.Impulse);
         //Debug.Log(Vector2.up * hurtForce);
         capsuleCollider.enabled = false;
+        LimitedInBounds limitedInBounds = GetComponent<LimitedInBounds>();
+        limitedInBounds.isLimited = false;
     }
+
+   
+
     #endregion
 
-    public IEnumerator ResetSpeed(PlayerControl playerControl, float buffDuration)
+    public IEnumerator ResetSpeed(PlayerControl playerControl, float buffDuration, Character character)
     {
         //Debug.Log("Start");
         //Debug.Log(buffDuration);
@@ -150,5 +179,17 @@ public class PlayerControl : MonoBehaviour
         //Debug.Log(buffDuration);
         //Debug.Log("End");
         playerControl.currentSpeed = playerControl.normalSpeed;
+        character.isBuff = false;
+        character.buffType = BuffType.Nobuff;
+        character.OnBuffChange?.Invoke(character);
+    }
+
+    public IEnumerator ResetFly(PlayerControl playerControl, float buffDuration, Character character)
+    {
+        yield return new WaitForSeconds(buffDuration);
+        playerControl.canFly = false;
+        character.isBuff = false;
+        character.buffType = BuffType.Nobuff;
+        character.OnBuffChange?.Invoke(character);
     }
 }
