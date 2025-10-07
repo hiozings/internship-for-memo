@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: items
+  m_EditorClassIdentifier: 
+  m_GroupName: items
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 7e12c17da0cc6034aa518edaeb15a0cb
+  m_SerializeEntries:
+  - m_GUID: 053077c56c84ec2408390c2cee5311d2
+    m_Address: Assets/Prefab/Items/Gloden Coin.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2bc5567dc22a2f94f840a3ae7b6cd0e8
+    m_Address: Assets/Prefab/Items/Arrow.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35e381b56d58e2b4faa70e82b230c21f
+    m_Address: Assets/Prefab/Items/Silver Coin.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4248574f693854945978695674fe2a46
+    m_Address: Assets/Prefab/Items/Buffs/Buff Invulnerable.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 86b5a4a22ce74f846874d7c30773aa5c
+    m_Address: Assets/Prefab/Items/Buffs/Buff Fly.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac67896b52a1bef458ec404296b30a1a
+    m_Address: Assets/Prefab/Items/Buffs/Buff Health.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d27d299c126a8ca48877ae338256744e
+    m_Address: Assets/Prefab/Items/Buffs/Buff Speed.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 7a749a316a77ca04faaebd00dbe975cd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 4a0960092f10b7e4185adcf919794815, type: 2}
+    - {fileID: 11400000, guid: b4cb3c619087d964ca838bce0828d472, type: 2}

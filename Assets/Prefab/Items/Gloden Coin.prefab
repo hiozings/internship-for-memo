@@ -241,6 +241,8 @@ MonoBehaviour:
   OnPickup:
     m_PersistentCalls:
       m_Calls: []
+  scoreValue: 0
+  scoreEventSO: {fileID: 11400000, guid: 660d8d441cec8d34f84cd15228568dad, type: 2}
 --- !u!114 &5964354711304478965
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -231,6 +231,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  scoreEventSO: {fileID: 11400000, guid: 660d8d441cec8d34f84cd15228568dad, type: 2}
   speedMultiplier: 2
 --- !u!114 &-8161569837356377791
 MonoBehaviour:

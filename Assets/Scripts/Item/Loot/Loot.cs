@@ -24,6 +24,11 @@ public class Loot : MonoBehaviour
     public event System.Action<GameObject> OnRemoveBuff;
     private Coroutine blinkCoroutine;
 
+
+    [Header("事件广播")]
+    public ScoreEventSO scoreEventSO;
+
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -89,6 +94,7 @@ public class Loot : MonoBehaviour
             OnPickup?.Invoke(collision.transform);
             OnRemoveBuff?.Invoke(gameObject);
             PlayAudioEvent.RaiseEvent(pickupFX);
+            scoreEventSO.RaiseEvent(score);
             Destroy(gameObject);
         }
     }

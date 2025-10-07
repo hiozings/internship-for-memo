@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03360a6ad023ce49836bd5f6760d04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newGameEvent: {fileID: 11400000, guid: 12cab920993ba7e4abe74ecbc87ed53e, type: 2}
   maxHealth: 1
   currentHealth: 0
   invulnerableDuration: 2
@@ -294,9 +295,11 @@ MonoBehaviour:
   lootPrefab:
   - {fileID: 5686634128908052698, guid: 053077c56c84ec2408390c2cee5311d2, type: 3}
   - {fileID: 726115306883301637, guid: 35e381b56d58e2b4faa70e82b230c21f, type: 3}
+  scoreEventSO: {fileID: 11400000, guid: 660d8d441cec8d34f84cd15228568dad, type: 2}
   normalSpeed: 100
   currentSpeed: 0
   faceDir: {x: 0, y: 0, z: 0}
+  scoreValue: 100
   moveTime: 0
   moveDelta: 0
   canMove: 1

@@ -108,6 +108,7 @@ public class PlayerControl : MonoBehaviour
     public void Move()
     {
         rb.velocity = new Vector2(currentSpeed * Time.deltaTime * inputDirection.x, rb.velocity.y);
+        //rb.AddForce(new Vector2(currentSpeed * Time.deltaTime * inputDirection.x, 0), ForceMode2D.Force);
         float faceDir = transform.localScale.x > 0 ? originScale: -originScale;
         if(inputDirection.x > 0)
             faceDir = -originScale;

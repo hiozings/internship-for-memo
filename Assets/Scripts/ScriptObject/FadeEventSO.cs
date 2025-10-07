@@ -19,6 +19,7 @@ public class FadeEventSO : ScriptableObject
 
     public void RaiseEvent(Color target, float duration, bool fadeIn)
     {
+        if (OnEventRaised == null) Debug.Log("No listeners for FadeEventSO");
         OnEventRaised?.Invoke(target, duration, fadeIn);
     }
 }

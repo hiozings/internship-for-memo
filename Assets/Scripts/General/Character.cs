@@ -4,14 +4,21 @@ using UnityEngine;
 using UnityEngine.Events;
 public class Character : MonoBehaviour
 {
+    [Header("事件监听")]
+    public VoidEventSO newGameEvent;
+    //public VoidEventSO healthEvent;
+    //public SceneLoadEventSO sceneLoadEvent;
+
     public int maxHealth;
     public int currentHealth;
     public float invulnerableDuration;
     public float invulnerableConunter;
     public bool invulnerable;
     public bool isBuff;
-
+    [Header("事件广播")]
     public PlayAudioEventSO PlayAudioEvent;
+    
+
     public AudioClip takeDamageFX;
     public AudioClip dieFX;
 
@@ -21,10 +28,23 @@ public class Character : MonoBehaviour
     public UnityEvent<Character> OnBuffChange;
     public UnityEvent<Transform> OnTakeDamage;
     public UnityEvent OnDie;
-    private void Start()
+    private void NewGame()
     {
         currentHealth = maxHealth;
         OnHealthChange?.Invoke(this);
+    }
+
+    private void OnEnable()
+    {
+        newGameEvent.OnEventRaised += NewGame;
+        //healthEvent.OnEventRaised += NewGame;
+
+    }
+
+    private void OnDisable()
+    {
+        newGameEvent.OnEventRaised -= NewGame;
+        //healthEvent.OnEventRaised -= NewGame;
     }
 
     private void Update()

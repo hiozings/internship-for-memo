@@ -13,10 +13,14 @@ public class Enemy : MonoBehaviour
     protected BoxCollider2D boxCollider2D;
     public GameObject[] lootPrefab;
 
+    [Header("事件广播")]
+    public ScoreEventSO scoreEventSO;
+
     public float normalSpeed;
     public float currentSpeed;
     public Vector3 faceDir;
 
+    public int scoreValue;
     public float moveTime;
     public float moveDelta;
     private float moveCounter;
@@ -95,6 +99,7 @@ public class Enemy : MonoBehaviour
         Attack attack = GetComponent<Attack>();
         attack.damage = 0;
         SpawnLoot();
+        scoreEventSO.RaiseEvent(scoreValue);
         rb.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
         StartCoroutine(Destroy());
     }

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Map
+  m_EditorClassIdentifier: 
+  m_GroupName: Map
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6dd6d5fab49d6c1439218eef606c4fac
+  m_SerializeEntries:
+  - m_GUID: 1459982cd44db51458e042c8b60d2c98
+    m_Address: Assets/Prefab/Jumpblock.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c379330a1ac9a446ac5fb7a6bf237f3
+    m_Address: Assets/Prefab/TrapPlatform.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51035e5a2bec2af4588e2a2404179c31
+    m_Address: Assets/Prefab/AirWall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 7a749a316a77ca04faaebd00dbe975cd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1d0de31ecd4bf0f45bcc1e30ef346443, type: 2}
+    - {fileID: 11400000, guid: 4288d49e0b7b7ce4f8a621c718ddaf8b, type: 2}

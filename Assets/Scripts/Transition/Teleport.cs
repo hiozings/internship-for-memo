@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    public SceneLoadEventSO loadEventSO;
+    [Header("事件广播")]
+    //public SceneLoadEventSO loadEventSO;
+    public SceneLoadEventSO levelClearEventSO;
+
     public GameSceneEventSO sceneToGo;
     public Vector3 positionToGo;
     public int enemiesLeft;
@@ -13,8 +16,9 @@ public class Teleport : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
-            TeleportToScene();
+            //TeleportToScene();
             //Debug.Log("No Enemies Left, Teleporting...");
+            levelClearEventSO.RaiseLoadRequestEvent(sceneToGo, positionToGo, true);
         }
         //if (GameObject.FindGameObjectsWithTag("Enemy").Length != 0)
         //{
@@ -32,8 +36,8 @@ public class Teleport : MonoBehaviour
     //    }
     //}
 
-    public void TeleportToScene()
-    {
-        loadEventSO.RaiseLoadRequestEvent(sceneToGo, positionToGo, true);
-    }
+    //public void TeleportToScene()
+    //{
+    //    loadEventSO.RaiseLoadRequestEvent(sceneToGo, positionToGo, true);
+    //}
 }
